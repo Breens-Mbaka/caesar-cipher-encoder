@@ -15,15 +15,17 @@ public class Encrypt {
         userInput = userInput.toLowerCase();
         String encryptedText = "";
 
-        for (int index=0 ; index < alphabets.length; index++) {
-            if(alphabets[index].equals(letter)){
-                int indexForEncryptedLetter = (index + key)%26;
-                String encryptedLetter = alphabets[indexForEncryptedLetter];
-                List<String> encryptedWord = new ArrayList<>();
-                encryptedWord.add(encryptedLetter);
-                String fullyEncrypted = encryptedWord.toString();
-                output = fullyEncrypted;
-            }
+        for (int index=0 ; index < userInput.length(); index++) {
+            //finding the index of each letter of the user input using the alphabet
+            int indexOfEachLetter = alphabets.indexOf(userInput.charAt(index));
+
+            int indexForEncryptedLetter = (indexOfEachLetter + key)%26;
+            char encryptedLetter = alphabets.charAt(indexForEncryptedLetter);
+
+            List<String> encryptedWord = new ArrayList<>();
+            encryptedWord.add(encryptedLetter);
+            String fullyEncrypted = encryptedWord.toString();
+            output = fullyEncrypted;
         }
         return output;
     }
