@@ -20,4 +20,11 @@ class EncryptTest {
         String exampleOutput = "wrp";
         assertEquals(exampleOutput, testEncrypt.encryptInput("tom"));
     }
+
+    @Test
+    void testDecrypt_inputGiven() {
+        Encrypt testDecrypt = new Encrypt();
+        String exampleOutput = "tom";
+        assertEquals(exampleOutput, testDecrypt.decrypt("wrp"));
+    }
 }

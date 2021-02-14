@@ -7,7 +7,7 @@ import java.util.Locale;
 
 public class Encrypt {
     private int key = 3;
-    private List<String> output;
+
 
     public String encryptInput(String userInput) {
         //find index of each letter of userInput in the standard alphabet
@@ -15,7 +15,7 @@ public class Encrypt {
         userInput = userInput.toLowerCase();
         String encryptedText = "";
 
-        for (int index=0 ; index < userInput.length(); index++) {
+        for (int index = 0; index < userInput.length(); index++) {
             //finding the index of each letter of the user input using the alphabet
             int indexOfEachLetter = alphabets.indexOf(userInput.charAt(index));
 
@@ -26,5 +26,23 @@ public class Encrypt {
             encryptedText = encryptedText + encryptedLetter;;
         }
         return encryptedText;
+    }
+
+    public String decrypt(String encryptedWord){
+        //find index of each letter of userInput in the standard alphabet
+        String alphabets = "abcdefghijklmnopqrstuvwxyz";
+        String decryptedText = "";
+
+        for (int index = 0; index < encryptedWord.length(); index++) {
+            //finding the index of each letter of the user input using the alphabet
+            int indexOfEachLetter = alphabets.indexOf(encryptedWord.charAt(index));
+
+            int indexForEncryptedLetter = (indexOfEachLetter + key)%26;
+            char encryptedLetter = alphabets.charAt(indexForEncryptedLetter);
+
+            //adding the encrypted letter to the encrypted text
+            decryptedText = decryptedText + encryptedLetter;;
+        }
+        return decryptedText;
     }
 }
