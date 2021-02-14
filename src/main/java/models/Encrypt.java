@@ -37,7 +37,7 @@ public class Encrypt {
             //finding the index of each letter of the user input using the alphabet
             int indexOfEachLetter = alphabets.indexOf(encryptedWord.charAt(index));
 
-            int indexForEncryptedLetter = (indexOfEachLetter + key)%26;
+            int indexForEncryptedLetter = (indexOfEachLetter - key)%26;
             char encryptedLetter = alphabets.charAt(indexForEncryptedLetter);
 
             //adding the encrypted letter to the encrypted text
