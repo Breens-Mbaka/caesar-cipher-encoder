@@ -13,18 +13,16 @@ public class Encrypt {
         //find index of each letter of userInput in the standard alphabet
         String alphabets = "abcdefghijklmnopqrstuvwxyz";
         userInput = userInput.toLowerCase();
+        String encryptedText = "";
 
-        char[] arrayOfLetters = userInput.toCharArray();
-        for (char letter: arrayOfLetters) {
-            for (int index=0 ; index < alphabets.length; index++) {
-                if(alphabets[index].equals(letter)){
-                    int indexForEncryptedLetter = (index + key)%26;
-                    String encryptedLetter = alphabets[indexForEncryptedLetter];
-                    List<String> encryptedWord = new ArrayList<>();
-                    encryptedWord.add(encryptedLetter);
-                    String fullyEncrypted = encryptedWord.toString();
-                     output = fullyEncrypted;
-                }
+        for (int index=0 ; index < alphabets.length; index++) {
+            if(alphabets[index].equals(letter)){
+                int indexForEncryptedLetter = (index + key)%26;
+                String encryptedLetter = alphabets[indexForEncryptedLetter];
+                List<String> encryptedWord = new ArrayList<>();
+                encryptedWord.add(encryptedLetter);
+                String fullyEncrypted = encryptedWord.toString();
+                output = fullyEncrypted;
             }
         }
         return output;
