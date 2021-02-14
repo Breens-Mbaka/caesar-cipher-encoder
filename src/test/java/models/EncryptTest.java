@@ -9,8 +9,8 @@ class EncryptTest {
     @Test
     void testEncrypt_inputIsString_String() {
         Encrypt testEncrypt = new Encrypt();
-        String exampleInput = "tom";
-        assertEquals(exampleInput, testEncrypt.encryptInput("tom"));
+        String exampleOutput = "";
+        assertEquals(exampleOutput, testEncrypt.encryptInput(""));
     }
 
     //testing for output should be right when given input

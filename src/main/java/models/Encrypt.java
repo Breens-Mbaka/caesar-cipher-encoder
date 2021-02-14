@@ -23,7 +23,7 @@ public class Encrypt {
             char encryptedLetter = alphabets.charAt(indexForEncryptedLetter);
 
             //adding the encrypted letter to the encrypted text
-            encryptedText = encryptedText + encryptedLetter;
+            encryptedText = encryptedText + encryptedLetter;;
         }
         return encryptedText;
     }
