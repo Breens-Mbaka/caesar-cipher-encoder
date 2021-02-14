@@ -10,8 +10,9 @@ public class Encrypt {
 
     public String encryptInput(String userInput) {
         //find index of each letter of userInput in the standard alphabet
-        String[] alphabets = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+        String alphabets = "abcdefghijklmnopqrstuvwxyz";
         char[] arrayOfLetters = userInput.toCharArray();
+        String output= "";
         for (char letter: arrayOfLetters) {
             for (int index=0 ; index < alphabets.length; index++) {
                 if(alphabets[index].equals(letter)){
@@ -19,11 +20,11 @@ public class Encrypt {
                     String encryptedLetter = alphabets[indexForEncryptedLetter];
                     List<String> encryptedWord = new ArrayList<>();
                     encryptedWord.add(encryptedLetter);
-                    return encryptedWord.toString();
+                    String fullyEncrypted = encryptedWord.toString();
+                     output = fullyEncrypted;
                 }
             }
         }
-        return userInput;
+        return output;
     }
-
 }
