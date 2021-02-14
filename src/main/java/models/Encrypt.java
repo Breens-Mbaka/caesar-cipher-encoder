@@ -22,11 +22,8 @@ public class Encrypt {
             int indexForEncryptedLetter = (indexOfEachLetter + key)%26;
             char encryptedLetter = alphabets.charAt(indexForEncryptedLetter);
 
-            List<String> encryptedWord = new ArrayList<>();
-            encryptedWord.add(encryptedLetter);
-            String fullyEncrypted = encryptedWord.toString();
-            output = fullyEncrypted;
+            encryptedText = encryptedText + encryptedLetter;
         }
-        return output;
+        return encryptedText;
     }
 }
