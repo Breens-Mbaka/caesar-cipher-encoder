@@ -12,7 +12,14 @@ public class App {
         String cipheredWord = encryptWord.encryptInput(encryptedWord);
         System.out.println("Encrypted to: " + cipheredWord);
 
-        String decipheredWord = encryptWord.decrypt(cipheredWord);
-        System.out.println("Decrypted back to: " + decipheredWord);
+        System.out.println("Do you want to decrypt it yes or no:");
+        String chosenOption = myTerminal.nextLine().toLowerCase();
+        if (chosenOption.equals("yes")) {
+            String decipheredWord = encryptWord.decrypt(cipheredWord);
+            System.out.println("Decrypted back to: " + decipheredWord);
+        }
+        else {
+            return;
+        }
     }
 }
