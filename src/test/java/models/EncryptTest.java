@@ -21,6 +21,7 @@ class EncryptTest {
         assertEquals(exampleOutput, testEncrypt.encryptInput("tom"));
     }
 
+    //testing to decrypt function to see if its decrypted
     @Test
     void testDecrypt_inputGiven() {
         Encrypt testDecrypt = new Encrypt();
