@@ -7,7 +7,7 @@ public class App {
         Encrypt encryptWord = new Encrypt();
         Scanner myTerminal = new Scanner(System.in);
 
-        System.out.println("What is the word you want to encrypt:");
+        System.out.println("What is the word or sentence you want to encrypt:");
         String encryptedWord = myTerminal.nextLine();
         String cipheredWord = encryptWord.encryptInput(encryptedWord);
         System.out.println("Encrypted to: " + cipheredWord);
